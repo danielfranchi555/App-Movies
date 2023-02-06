@@ -1,24 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { HashRouter, Route, Routes } from 'react-router-dom';
+import NavBar from './Components/NavBar/NavBar';
+import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
+import Carrousel from './Components/Carrousel/Carrousel';
 
 function App() {
   return (
+    <HashRouter>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <NavBar/>
+     <Routes>
+      <Route path='/' element={<ItemListContainer/>}/>
+      <Route path='/detalle' element={<ItemDetailContainer/>}/>
+    </Routes>
     </div>
+    </HashRouter>
   );
 }
 
