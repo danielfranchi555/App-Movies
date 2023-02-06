@@ -6,9 +6,11 @@ import "slick-carousel/slick/slick-theme.css";
 import { Link } from 'react-router-dom';
 const ItemListUpcomming = () => {
     const[newData,setNewData]=useState([])
+    const[loading,setLoading]=useState(true)
 
     useEffect(()=>{
    getApiUpcomming(setNewData)
+   setLoading(false)
     },[])
     const imgMovie = (url)=>{
         const image = `https://www.themoviedb.org/t/p/w220_and_h330_face/${url}`
@@ -55,6 +57,9 @@ const ItemListUpcomming = () => {
             },
           },
         ],}
+ if(loading){
+  return <h1>loading</h1>
+ }
   return (
     <div className=''>
         <span style={{color:'white'}}>movie upcomming</span>
