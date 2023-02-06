@@ -10,12 +10,16 @@ const ItemListContainer = ()=>{
  const[loading,setLoading]=useState(true)
 
     useEffect(()=>{
-     getApiRated(setData) 
+      setTimeout(() => {
+         setLoading(true)
+          getApiRated(setData) 
      setLoading(false)
+      }, 3000);
+    
     },[])
 
   if(loading){
-    return <h1>loading</h1>
+    return <h4 style={{color:'white'}} className='text-center'>loading...</h4>
   }
  return (
     <div className=" ">

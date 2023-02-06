@@ -37,9 +37,9 @@ const Carrousel = () => {
                 src={addImg(item.backdrop_path)}
                 alt="First slide"
               />
-               <h1 style={{position:'absolute',top:'150px',left:'100px',color:'white'}}>
-                {item.title}
-              </h1>
+               <div style={{position:'absolute',top:'100px',left:'100px',color:'white'}}>
+                 <h1 style={{color:'white'}}>  {item.title}</h1>
+              </div>
             </Carousel.Item>
            
           ))}

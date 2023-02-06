@@ -9,8 +9,11 @@ const ItemListUpcomming = () => {
     const[loading,setLoading]=useState(true)
 
     useEffect(()=>{
-   getApiUpcomming(setNewData)
+     
+        setLoading(true)
+          getApiUpcomming(setNewData)
    setLoading(false)
+ 
     },[])
     const imgMovie = (url)=>{
         const image = `https://www.themoviedb.org/t/p/w220_and_h330_face/${url}`
@@ -53,12 +56,12 @@ const ItemListUpcomming = () => {
             settings: {
               slidesToShow: 3,
               slidesToScroll: 3,
-              initialSlide: 2,
+              initialSlide: 1,
             },
           },
         ],}
  if(loading){
-  return <h1>loading</h1>
+  return <h1 style={{color:'white'}} className='text-center'>loading</h1>
  }
   return (
     <div className=''>
