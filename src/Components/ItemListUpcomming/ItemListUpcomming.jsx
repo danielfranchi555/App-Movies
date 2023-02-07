@@ -10,7 +10,6 @@ const ItemListUpcomming = () => {
 
     useEffect(()=>{
      
-        setLoading(true)
           getApiUpcomming(setNewData)
    setLoading(false)
  
@@ -20,17 +19,14 @@ const ItemListUpcomming = () => {
         return image
        }
        const settings = {
-        dots: true,
-        infinite: true,
-        arrows: false,
-        speed: 500,
+        dots: false,
+        infinite: false,
+        arrows: true,
+        speed: 200,
         slidesToShow: 3,
         slidesToScroll: 1,
     
-        // customPaging: function (i) {
-        //   return <p>{i + 1}</p>;
-        // },
-    
+
         responsive: [
           {
             breakpoint: 1424,
@@ -45,7 +41,7 @@ const ItemListUpcomming = () => {
           {
             breakpoint: 1124,
             settings: {
-              slidesToShow: 5,
+              slidesToShow: 4,
               slidesToScroll: 3,
               infinite: true,
               dots: true,
@@ -54,11 +50,12 @@ const ItemListUpcomming = () => {
           {
             breakpoint: 800,
             settings: {
-              slidesToShow: 3,
+              slidesToShow: 2,
               slidesToScroll: 3,
               initialSlide: 1,
             },
           },
+       
         ],}
  if(loading){
   return <h1 style={{color:'white'}} className='text-center'>loading</h1>

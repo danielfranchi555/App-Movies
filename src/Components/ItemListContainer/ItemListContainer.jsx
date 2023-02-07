@@ -14,7 +14,7 @@ const ItemListContainer = ()=>{
          setLoading(true)
           getApiRated(setData) 
      setLoading(false)
-      }, 3000);
+      }, 5000);
     
     },[])
 

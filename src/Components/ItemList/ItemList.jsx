@@ -6,10 +6,10 @@ import "slick-carousel/slick/slick-theme.css";
 
 const ItemList = ({data}) => {
   const settings = {
-    dots: true,
-    infinite: true,
-    arrows: false,
-    speed: 500,
+    dots: false,
+    infinite: false,
+    arrows: true,
+    speed: 200,
     slidesToShow: 4,
     slidesToScroll: 1,
 
@@ -29,7 +29,7 @@ const ItemList = ({data}) => {
       {
         breakpoint: 1124,
         settings: {
-          slidesToShow: 5,
+          slidesToShow: 4,
           slidesToScroll: 2,
           infinite: true,
           dots: true,
