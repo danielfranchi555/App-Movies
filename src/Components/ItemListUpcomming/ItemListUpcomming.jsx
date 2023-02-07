@@ -4,6 +4,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from 'react-router-dom';
+import './ItemListUpcomming.scss'
+
 const ItemListUpcomming = () => {
     const[newData,setNewData]=useState([])
     const[loading,setLoading]=useState(true)
@@ -67,11 +69,12 @@ const ItemListUpcomming = () => {
         {newData.map((item)=>(
                <div className=''>
               
-           
-              <div className=''>
-
+            <Link to={'/detalle'}>
+             <div className='card-item'>
                 <img className='px-2' src={imgMovie(item.poster_path)} style={{height:'200px',width:'150px',margin:''}} />
               </div>
+            </Link>
+             
             
               
                </div>

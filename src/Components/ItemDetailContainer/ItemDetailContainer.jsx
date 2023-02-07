@@ -2,7 +2,7 @@ import React from 'react'
 
 const ItemDetailContainer = () => {
   return (
-    <div>ItemDetailContainer</div>
+    <div className='text-center' style={{color:'white'}}>ItemDetailContainer</div>
   )
 }
 

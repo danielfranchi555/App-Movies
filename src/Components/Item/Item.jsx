@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Item.scss'
 const Item = ({item}) => {
 
@@ -9,8 +10,10 @@ const Item = ({item}) => {
 
 
   return (
-    <div className=''>
-        <img className='px-2' src={imgMovie(item.poster_path)} style={{height:'200px',width:'150px'}}/>
+    <div className='card-item'>
+      <Link to={'/detalle'}>
+        <img className='px-2 img-list ' src={imgMovie(item.poster_path)} />      
+      </Link>
      
     </div>
   )
