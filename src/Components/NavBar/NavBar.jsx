@@ -7,16 +7,17 @@ import LogoutButton from '../LogoutButton/LogoutButton';
 import { useAuth0 } from '@auth0/auth0-react';
 import Profile from '../Profile/Profile';
 import logo from '../../img/video.png'
+import { Link } from 'react-router-dom';
 const NavBar = () => {
 
  const {isAuthenticated,user} = useAuth0()
  
   return (
-    <Navbar bg="ligth" className='fixed-top' expand="lg" >
+    <Navbar bg="primary" className='fixed-top' expand="lg" >
     <Container>
-      <Navbar.Brand href="#home" style={{color:'white'}}> <img src={logo} alt="" style={{width:'50px'}}/> </Navbar.Brand>
+    <Link to={'/'}>  <Navbar.Brand href="#home" style={{color:'white'}}> <img src={logo} alt="" style={{width:'50px'}}/> </Navbar.Brand> </Link> 
       <Navbar.Toggle style={{color:'white',backgroundColor:'white'}} aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse  id="basic-navbar-nav">
+      <Navbar.Collapse style={{marginTop:'19px'}} id="basic-navbar-nav">
         <Nav className="m-auto">
           <span href="#" style={{color:'white',fontWeight:'800'}}>{isAuthenticated && user.name}</span>
          
