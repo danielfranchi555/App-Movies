@@ -9,8 +9,8 @@ const Item = ({item}) => {
 
 
   return (
-    <div className=''>
-        <img src={imgMovie(item.poster_path)} style={{height:'200px',width:'150px'}}/>
+    <div className='px-5'>
+        <img className='px-2' src={imgMovie(item.poster_path)} style={{height:'200px',width:'150px'}}/>
      
     </div>
   )

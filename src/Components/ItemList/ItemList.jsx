@@ -19,7 +19,7 @@ const ItemList = ({data}) => {
       {
         breakpoint: 1424,
         settings: {
-          slidesToShow: 7,
+          slidesToShow: 6,
           slidesToScroll: 3,
           infinite: true,
           dots: true,
@@ -45,11 +45,11 @@ const ItemList = ({data}) => {
       },
     ],}
   return (
-    <div className='mt-5' >
+    <div className='mt-5 ' >
       <span style={{color:'white'}}>Movies Popular</span>
       <Slider {...settings}>
         {data.map((item)=>(
-             <div>
+             <div className='px-5'>
               <Item item={item}/>
              </div>
           

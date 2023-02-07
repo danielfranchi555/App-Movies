@@ -31,7 +31,7 @@ const ItemListUpcomming = () => {
           {
             breakpoint: 1424,
             settings: {
-              slidesToShow: 7,
+              slidesToShow: 6,
               slidesToScroll: 3,
               infinite: true,
               dots: true,
@@ -50,7 +50,7 @@ const ItemListUpcomming = () => {
           {
             breakpoint: 800,
             settings: {
-              slidesToShow: 2,
+              slidesToShow: 3,
               slidesToScroll: 3,
               initialSlide: 1,
             },
@@ -65,12 +65,12 @@ const ItemListUpcomming = () => {
         <span style={{color:'white'}}>movie upcomming</span>
         <Slider {...settings}>
         {newData.map((item)=>(
-               <div>
+               <div className='px-5'>
               
            
-              <div>
+              <div className='px-5'>
 
-                <img src={imgMovie(item.poster_path)} style={{height:'200px',width:'150px',border:'solid 1px white'}} />
+                <img className='px-2' src={imgMovie(item.poster_path)} style={{height:'200px',width:'150px',margin:''}} />
               </div>
             
               
