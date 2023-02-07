@@ -7,9 +7,9 @@ import "slick-carousel/slick/slick-theme.css";
 const ItemList = ({data}) => {
   const settings = {
     dots: false,
-    infinite: false,
+    infinite: true,
     arrows: true,
-    speed: 200,
+    speed: 400,
     slidesToShow: 4,
     slidesToScroll: 1,
 
@@ -22,7 +22,7 @@ const ItemList = ({data}) => {
           slidesToShow: 6,
           slidesToScroll: 3,
           infinite: true,
-          dots: true,
+          dots: false,
         },
       },
 
@@ -32,15 +32,16 @@ const ItemList = ({data}) => {
           slidesToShow: 4,
           slidesToScroll: 2,
           infinite: true,
-          dots: true,
+          dots: false,
         },
       },
       {
         breakpoint: 800,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1,
-          initialSlide: 2,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: false,
         },
       },
     ],}
@@ -49,7 +50,7 @@ const ItemList = ({data}) => {
       <span style={{color:'white'}}>Movies Popular</span>
       <Slider {...settings}>
         {data.map((item)=>(
-             <div className='px-5'>
+             <div className=''>
               <Item item={item}/>
              </div>
           

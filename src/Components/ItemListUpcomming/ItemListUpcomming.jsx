@@ -19,8 +19,8 @@ const ItemListUpcomming = () => {
         return image
        }
        const settings = {
-        dots: false,
-        infinite: false,
+        dots: true,
+        infinite: true,
         arrows: true,
         speed: 200,
         slidesToShow: 3,
@@ -65,10 +65,10 @@ const ItemListUpcomming = () => {
         <span style={{color:'white'}}>movie upcomming</span>
         <Slider {...settings}>
         {newData.map((item)=>(
-               <div className='px-5'>
+               <div className=''>
               
            
-              <div className='px-5'>
+              <div className=''>
 
                 <img className='px-2' src={imgMovie(item.poster_path)} style={{height:'200px',width:'150px',margin:''}} />
               </div>

@@ -9,7 +9,7 @@ const Item = ({item}) => {
 
 
   return (
-    <div className='px-5'>
+    <div className=''>
         <img className='px-2' src={imgMovie(item.poster_path)} style={{height:'200px',width:'150px'}}/>
      
     </div>
