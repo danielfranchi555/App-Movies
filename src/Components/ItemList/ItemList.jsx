@@ -38,7 +38,7 @@ const ItemList = ({data}) => {
       {
         breakpoint: 800,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
           slidesToScroll: 1,
           initialSlide: 2,
         },

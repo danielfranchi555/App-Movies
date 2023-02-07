@@ -50,7 +50,7 @@ const ItemListUpcomming = () => {
           {
             breakpoint: 800,
             settings: {
-              slidesToShow: 3,
+              slidesToShow: 2,
               slidesToScroll: 3,
               initialSlide: 1,
             },
