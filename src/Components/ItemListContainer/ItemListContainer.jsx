@@ -34,8 +34,8 @@ const ItemListContainer = () => {
   <Carrousel />
 </div>
 <div className="container">
-  <h2 style={{color:'white',fontSize:'20px',textAlign:'center',marginTop:'10px'}}>Peliculas para {user.name}</h2>
-  <ItemList data={data} />
+  {isAuthenticated && <h2 style={{color:'white',textAlign:'center',marginTop:'20px'}}> Peliculas para <span style={{color:'#a2c11c'}}>{user.name}</span> </h2>}
+ <ItemList data={data} />
   <ItemListUpcomming />
   <ItemListTop className='py-5'/>
 </div>

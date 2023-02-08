@@ -10,7 +10,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
      <Auth0Provider
      domain="dev-zqyp5ktyb085rg5b.us.auth0.com"
-     clientId="GCgBqQA7iIH1sslN6waJsZicB1JS4j9Z"
+     clientId="FAq7ka4e4lPkxzcaAFIfGR4fmmFkf9bv"
      redirectUri= {window.location.origin}
      >
 
