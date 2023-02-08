@@ -8,32 +8,32 @@ import { useAuth0 } from '@auth0/auth0-react';
 import Profile from '../Profile/Profile';
 import logo from '../../img/video.png'
 import { Link } from 'react-router-dom';
+import './NavBar.scss'
 const NavBar = () => {
 
  const {isAuthenticated,user} = useAuth0()
  
   return (
-    <Navbar bg="primary" className='fixed-top' expand="lg"  /* style={{marginBottom:'200px'}} */>
-    <Container>
-    <Link to={'/'}>  <Navbar.Brand href="#home" style={{color:'white'}}> <img src={logo} alt="" style={{width:'40px'}}/> </Navbar.Brand> </Link> 
-      <Navbar.Toggle style={{color:'white',backgroundColor:'white'}} aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse style={{marginTop:'19px'}} id="basic-navbar-nav">
-        <Nav className="m-auto">
-          <p href="#" style={{color:'white',fontWeight:'800'}}>{isAuthenticated && user.name}</p>
-         
-        </Nav>
-        {isAuthenticated ?
-         <Profile/>:
-         <LoginButton/>
-      }
-      {isAuthenticated &&
-      <LogoutButton/>
-      }
-      
-        
-      </Navbar.Collapse>
-    </Container>
-  </Navbar>
+<nav class="navbar navbar-expand-lg  navbar-light ">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse  " id="navbarSupportedContent">
+      <ul class="navbar-nav m-auto">
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="#">Terror</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+      </ul>
+          {!isAuthenticated ?<LoginButton/>:<LogoutButton/>}
+
+    </div>
+  </div>
+</nav>
   )
 }
 

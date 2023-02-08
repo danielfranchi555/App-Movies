@@ -68,7 +68,7 @@ const ItemListTop = () => {
         <p style={{color:'white',marginBottom:'10px'}}> top rated</p>
           <Slider {...settings}>
         {data.map((item) => (
-          <div className="container">
+          <div key={item.id} className="container">
             {isAuthenticated?
                <Link to={`/detalle/${item.id}`}>
               <div className="card-item">

@@ -4,7 +4,7 @@ const LogoutButton = () => {
        const{logout}= useAuth0()
   return (
     <div className=''>
-        <button className='btn btn-dark' onClick={()=>logout()}>log Out</button>
+        <button className='btn '  style={{backgroundColor:'#a2c11c'}} onClick={()=>logout()}>log Out</button>
     </div>
   )
 }

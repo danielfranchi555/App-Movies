@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { getApiRated } from "../../data";
 import Carrousel from "../Carrousel/Carrousel";
-import logo from "../../img/video.png";
 import ItemList from "../ItemList/ItemList";
 import ItemListUpcomming from "../ItemListUpcomming/ItemListUpcomming";
 import Profile from "../Profile/Profile";
+import { useAuth0 } from '@auth0/auth0-react';
+
 import "./ItemListContainer.scss";
 import ItemListTop from "../ItemListTop/ItemListTop";
 const ItemListContainer = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const {isAuthenticated,user} = useAuth0()
 
   useEffect(() => {
     setTimeout(() => {
@@ -21,7 +23,7 @@ const ItemListContainer = () => {
 
 
   return (
-    <div className="mt-5">
+    <div className="">
       {loading?
      <h3 className="text-center " style={{marginTop:'100px',color:'white'}}>
         loading...
@@ -32,6 +34,7 @@ const ItemListContainer = () => {
   <Carrousel />
 </div>
 <div className="container">
+  <h2 style={{color:'white',fontSize:'20px',textAlign:'center',marginTop:'10px'}}>Peliculas para {user.name}</h2>
   <ItemList data={data} />
   <ItemListUpcomming />
   <ItemListTop className='py-5'/>

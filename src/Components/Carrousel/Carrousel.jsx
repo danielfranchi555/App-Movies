@@ -31,13 +31,13 @@ const Carrousel = () => {
       <div style={{position:'relative'}}>
         <Carousel>
           {imgCarrousel.map((item) => (
-            <Carousel.Item>
+            <Carousel.Item key={item.id}>
               <img
                 className="d-block w-100 img-carrousel"
                 src={addImg(item.backdrop_path)}
                 alt="First slide"
               />
-               <div style={{position:'absolute',top:'100px',left:'100px',color:'white'}}>
+               <div className="title-Carrousel" style={{position:'absolute',top:'100px',left:'100px',color:'white'}}>
                  <h1 style={{color:'white'}}>  {item.title}</h1>
               </div>
             </Carousel.Item>

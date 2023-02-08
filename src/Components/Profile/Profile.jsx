@@ -3,7 +3,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import swal from 'sweetalert';
 
 const Profile = () => {
-    const { user, isAuthenticated, isLoading } = useAuth0();
+    const { user, isAuthenticated } = useAuth0();
   
     function autenticacion () {
      swal({
@@ -13,7 +13,7 @@ const Profile = () => {
    
 
   return (
-    <div className='' style={{color:'white '}}>
+    <div className='' style={{color:'black '}}>
         {isAuthenticated &&
              autenticacion()        
         }

@@ -74,7 +74,7 @@ const ItemListUpcomming = () => {
       <p style={{ color: "white",marginBottom:'10px' }}>movie upcomming</p>
       <Slider {...settings}>
         {newData.map((item) => (
-          <div className="container">
+          <div key={item.id} className="container">
             {isAuthenticated?
                <Link to={`/detalle/${item.id}`}>
               <div className="card-item">

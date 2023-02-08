@@ -3,3 +3,9 @@
     height: auto;
     filter: brightness(30%); 
 }
+@media screen and (max-width:800px) {
+    .title-Carrousel{
+        top: 300px;
+        font-size: 500px;
+    } 
+}
