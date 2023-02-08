@@ -13,13 +13,13 @@ const NavBar = () => {
  const {isAuthenticated,user} = useAuth0()
  
   return (
-    <Navbar bg="primary" className='fixed-top' expand="lg" >
+    <Navbar bg="primary" className='fixed-top' expand="lg"  /* style={{marginBottom:'200px'}} */>
     <Container>
-    <Link to={'/'}>  <Navbar.Brand href="#home" style={{color:'white'}}> <img src={logo} alt="" style={{width:'50px'}}/> </Navbar.Brand> </Link> 
+    <Link to={'/'}>  <Navbar.Brand href="#home" style={{color:'white'}}> <img src={logo} alt="" style={{width:'40px'}}/> </Navbar.Brand> </Link> 
       <Navbar.Toggle style={{color:'white',backgroundColor:'white'}} aria-controls="basic-navbar-nav" />
       <Navbar.Collapse style={{marginTop:'19px'}} id="basic-navbar-nav">
         <Nav className="m-auto">
-          <span href="#" style={{color:'white',fontWeight:'800'}}>{isAuthenticated && user.name}</span>
+          <p href="#" style={{color:'white',fontWeight:'800'}}>{isAuthenticated && user.name}</p>
          
         </Nav>
         {isAuthenticated ?

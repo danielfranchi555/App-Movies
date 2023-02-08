@@ -47,11 +47,11 @@ const ItemList = ({data}) => {
       },
     ],}
   return (
-    <div className='mt-5 ' >
-      <span style={{color:'white'}}>Movies Popular</span>
+    <div className='mt-5 container' >
+      <p style={{color:'white',marginbottom:'10px'}}>Movies Popular</p>
       <Slider {...settings}>
         {data.map((item)=>(
-             <div className=''>
+             <div className='container'>
               <Item item={item}/>
              </div>
           

@@ -70,11 +70,11 @@ const ItemListUpcomming = () => {
     );
   }
   return (
-    <div className="">
-      <span style={{ color: "white" }}>movie upcomming</span>
+    <div className="container">
+      <p style={{ color: "white",marginBottom:'10px' }}>movie upcomming</p>
       <Slider {...settings}>
         {newData.map((item) => (
-          <div className="">
+          <div className="container">
             {isAuthenticated?
                <Link to={`/detalle/${item.id}`}>
               <div className="card-item">

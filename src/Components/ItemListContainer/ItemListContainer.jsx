@@ -6,6 +6,7 @@ import ItemList from "../ItemList/ItemList";
 import ItemListUpcomming from "../ItemListUpcomming/ItemListUpcomming";
 import Profile from "../Profile/Profile";
 import "./ItemListContainer.scss";
+import ItemListTop from "../ItemListTop/ItemListTop";
 const ItemListContainer = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -20,9 +21,9 @@ const ItemListContainer = () => {
 
 
   return (
-    <div className="  ">
+    <div className="mt-5">
       {loading?
-     <h3 className="text-center mt-5" style={{color:'white'}}>
+     <h3 className="text-center " style={{marginTop:'100px',color:'white'}}>
         loading...
       </h3>
     :
@@ -33,6 +34,7 @@ const ItemListContainer = () => {
 <div className="container">
   <ItemList data={data} />
   <ItemListUpcomming />
+  <ItemListTop className='py-5'/>
 </div>
 </div>
     }

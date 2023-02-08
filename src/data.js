@@ -39,3 +39,15 @@ const getMovieDetailComming = async (state,id)=>{
 export{
   getMovieDetailComming
 }
+
+
+const getMovieDetailTop= async (state)=>{
+  const data = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${api_key}&language=en-US&page=1`)
+  const resp = await data.json()
+  console.log(resp)
+  state(resp.results)
+}
+export{
+  getMovieDetailTop
+}
+
