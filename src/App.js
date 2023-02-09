@@ -1,6 +1,6 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import NavBar from './Components/NavBar/NavBar';
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
@@ -8,7 +8,7 @@ import Carrousel from './Components/Carrousel/Carrousel';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
     <div className="App">
      <NavBar/>
      <Routes>
@@ -16,7 +16,7 @@ function App() {
       <Route path='/detalle/:id' element={<ItemDetailContainer/>}/>
     </Routes>
     </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
