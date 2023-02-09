@@ -6,6 +6,9 @@ import ItemListContainer from './Components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
 import Carrousel from './Components/Carrousel/Carrousel';
 
+const React = require('react'); console.log(React.version);
+
+
 function App() {
   return (
     <HashRouter>
