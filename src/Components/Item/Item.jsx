@@ -17,14 +17,11 @@ const Item = ({item}) => {
 
   return (
     <div className='card-item'>
-      {isAuthenticated?
        <Link to={`/detalle/${item.id}}`}>
         <img className='px-2 img-list ' src={imgMovie(item.poster_path)} />      
-      </Link>:
-         <Link onClick={()=>noLink()}>
-         <img className='px-2 img-list ' src={imgMovie(item.poster_path)} />      
-       </Link>
-      }
+      </Link>
+        
+      
      
     </div>
   )

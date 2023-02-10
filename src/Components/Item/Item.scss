@@ -5,7 +5,18 @@
         border: solid 1px white;
     }
     img{
-        height: 200px;
+        height: 240px;
         width: auto;
+    }
+}
+
+
+@media screen and (max-width:800px) {
+    .card-item{
+        width: 400px;
+        :hover{
+            border: solid 1px black;
+
+        }
     }
 }

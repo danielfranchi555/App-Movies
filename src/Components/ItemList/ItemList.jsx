@@ -51,9 +51,8 @@ const ItemList = ({data}) => {
       <p style={{color:'white',marginbottom:'10px'}}>Movies Popular</p>
       <Slider {...settings}>
         {data.map((item)=>(
-             <div key={item.id} className='container'>
-              <Item item={item}/>
-             </div>
+             
+              <Item key={item.id} item={item}/>
           
         ))}
        </Slider>

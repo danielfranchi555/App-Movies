@@ -1,0 +1,49 @@
+.footer .footer-bottom{
+    width:100%;
+    margin:1% 0%;
+    padding:0.6% 0%;
+    color:rgb(178, 18, 18);
+    font-size:0.8em;
+    }
+    
+    .footer .footer-bottom a{
+    text-decoration:none;
+    color:gray;
+    transition:0.5s;
+    }
+    
+    .footer .footer-bottom a:hover{
+    color:#fff;
+    }
+    
+    .footer .footer-bottom ul{
+    width:100%;
+    }
+    
+    .footer .footer-bottom ul li{
+    display:inline-block;
+    margin:0px 30px;
+    }
+    
+    .footer .footer-bottom a i{
+    font-size:2em;
+    margin:0% 1%;
+    }
+    
+    @media (max-width:720px){
+    .footer{
+    text-align:left;
+    padding:5%;
+    }
+    .footer .row ul li{
+    display:block;
+    margin:10px 0px;
+    text-align:left;
+    }
+    .footer .row a i{
+    margin:0% 3%;
+    }
+    }
+    .logoRedes{
+        width: 20px;
+    }
