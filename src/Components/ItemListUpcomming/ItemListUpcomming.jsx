@@ -10,18 +10,10 @@ import "./ItemListUpcomming.scss";
 const ItemListUpcomming = () => {
   const [newData, setNewData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [input,setInput]= useState('')
 
   const { isAuthenticated, user } = useAuth0();
 
-  const filterMovies = newData.filter((movie)=>movie.original_title.toLowerCase().includes(input.toLocaleLowerCase()))
- 
-  const handleSumbit = (e)=>{
-      e.preventDefault()
-  }
-  const handleChange = (e)=>{
-       setInput(e.target.value)
-  }
+
 
   const noLink = () => {
     alert('no estas registrado')
@@ -83,7 +75,7 @@ const ItemListUpcomming = () => {
     <div className="container">
       <p style={{ color: "white",marginBottom:'10px' }}>movie upcomming</p>
       <Slider {...settings}>
-        {filterMovies.map((item) => (
+        {newData.map((item) => (
           <div key={item.id} className="container">
             {isAuthenticated?
                <Link to={`/detalle/${item.id}`}>

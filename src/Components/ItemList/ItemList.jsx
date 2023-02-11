@@ -47,7 +47,7 @@ const ItemList = ({data}) => {
       },
     ],}
   return (
-    <div className='mt-5 container' >
+    <div className=' container' >
       <p style={{color:'white',marginbottom:'10px'}}>Movies Popular</p>
       <Slider {...settings}>
         {data.map((item)=>(

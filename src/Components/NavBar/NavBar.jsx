@@ -1,39 +1,119 @@
-import React from 'react'
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import LoginButton from '../LoginButton/LoginButton';
-import LogoutButton from '../LogoutButton/LogoutButton';
-import { useAuth0 } from '@auth0/auth0-react';
-import Profile from '../Profile/Profile';
-import logo from '../../img/video.png'
-import { Link } from 'react-router-dom';
-import './NavBar.scss'
+import React, { useEffect, useState } from "react";
+import LoginButton from "../LoginButton/LoginButton";
+import LogoutButton from "../LogoutButton/LogoutButton";
+import { useAuth0 } from "@auth0/auth0-react";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import { Link } from "react-router-dom";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+import { getApiUpcomming } from "../../data";
+import { getMovieDetailTop } from "../../data";
+import { getApiRated } from "../../data";
+import "./NavBar.scss";
+import lupa from "../../img/lupa.png";
+import logo from '../../img/logo-movies.png'
+
 const NavBar = () => {
+  const [data, setData] = useState([]);
+  const [dataRated, setDataRated] = useState([]);
+  const [dataTop, setDataTop] = useState([]);
+  const [lgShow, setLgShow] = useState(false);
+  const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(true);
 
- const {isAuthenticated,user} = useAuth0()
- 
+
+  const { isAuthenticated, user } = useAuth0();
+
+
+
+  const newArray = data.concat(dataRated, dataTop);
+  const filterMovies = newArray.filter((movie) =>
+    movie.original_title.toLowerCase().includes(input.toLocaleLowerCase())
+  );
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(true);
+      getApiRated(setData);
+      getApiUpcomming(setDataRated);
+      getMovieDetailTop(setDataTop);
+      setLoading(false);
+    }, 3000);
+  }, []);
+
+  const imgMovie = (url) => {
+    let img;
+    return (img = `https://image.tmdb.org/t/p/original${url}`);
+  };
+
+  const handleSumbit = (e) => {
+    e.preventDefault();
+  };
+  const handleChange = (e) => {
+    setInput(e.target.value);
+  };
+
   return (
-<nav class="navbar navbar-expand-lg  navbar-light ">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse  " id="navbarSupportedContent">
-      <ul class="navbar-nav m-auto">
-        <li class="nav-item">
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-      </ul>
-          {!isAuthenticated ?<LoginButton/>:<LogoutButton/>}
+    <Navbar collapseOnSelect expand="lg"    >
+      <Container>
+        <Navbar.Brand href="/"> <img src={logo} style={{width:'50px'}} alt="" /> </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="ms-auto d-flex" style={{justifyContent:'center',alignItems:'center'}}>
+          <div>
+                    <Nav.Link >
+              <Button
+                style={{ backgroundColor: "#005792", height: "35px" }}
+                onClick={() => setLgShow(true)}
+              >
+                Search Movie <img src={lupa} alt="" style={{ width: "20px" }} />
+              </Button>
+              <Modal
+                size="lg"
+                show={lgShow}
+                onHide={() => setLgShow(false)}
+                aria-labelledby="example-modal-sizes-title-lg"
+                className="text-center"
+              >
+                <Modal.Header closeButton></Modal.Header>
+                <div>
+                  <form onSubmit={handleSumbit}>
+                    <input type="text" onChange={handleChange} value={input} />
+                    <input type="submit" />
+                  </form>
+                </div>
+                <Modal.Body>
+                  {input === ""
+                    ? null
+                    : filterMovies.map((item) => (
+                        <Link to={`/detalle/${item.id}`}>
+                          <img
+                            style={{ width: "100px" }}
+                            src={imgMovie(item.poster_path)}
+                          ></img>
+                        </Link>
+                      ))}
+                </Modal.Body>
+              </Modal>
+            </Nav.Link>
+                </div>
+        
+            <div>
+              <Nav.Link>
+                {isAuthenticated? <LogoutButton/>:
+                
+                <LoginButton/>
+                }
+            </Nav.Link>
+            </div>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
+};
 
-    </div>
-  </div>
-</nav>
-  )
-}
-
-export default NavBar
+export default NavBar;

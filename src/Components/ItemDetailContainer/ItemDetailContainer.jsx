@@ -2,8 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import {getMovieDetail} from '../../data'
 import {getMovieDetailComming} from '../../data'
+import Footer from '../Footer/Footer'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import './ItemDetailContainer.scss'
+import Button from 'react-bootstrap/Button';
+import Spinner from 'react-bootstrap/Spinner';
+
+
 const ItemDetailContainer = () => {
   const[movieDetail,setMovieDetail]=useState({})
   const[loading,setLoading]= useState(true)
@@ -34,14 +39,28 @@ const ItemDetailContainer = () => {
   },[])
 
 if(loading){
-  return <h1 className='text-center' style={{color:'white'}}>loading...</h1>
+  return    <div className="text-center mt-5">
+  <Button variant="primary" disabled>
+    <Spinner
+      as="span"
+      animation="grow"
+      size="sm"
+      role="status"
+      aria-hidden="true"
+    />
+    Loading...
+  </Button>
+  </div>
 }
   return (
-   <div  >
+   <div className=''  >
     <div className='main-bg-detail' style={{position:'absolute',height:'100vh',width:'100%', filter:'brightness(30%)',backgroundRepeat:'no-repeat',backgroundSize:'cover',backgroundPosition:'center', backgroundImage:`url(${getImg(movieDetail.backdrop_path)})`}}>
     </div>
     <div className='container' style={{display:'flex',flexDirection:'column',justifyContent:'center',position:'relative'}}>
     <ItemDetail movieDetail={movieDetail} ></ItemDetail>
+    </div>
+    <div>
+          <Footer/>
     </div>
    </div>
   )

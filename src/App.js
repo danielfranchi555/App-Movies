@@ -7,6 +7,7 @@ import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailCont
 import Carrousel from './Components/Carrousel/Carrousel';
 import Footer from './Components/Footer/Footer';
 import { useAuth0 } from '@auth0/auth0-react';
+import Context from './Components/Context/Context';
 
 const React = require('react'); console.log(React.version);
 
@@ -14,13 +15,15 @@ const React = require('react'); console.log(React.version);
 function App() {
   return (
     <HashRouter>
-    <div className="App">
+      <Context>
+     <div className="App">
      <NavBar/>
      <Routes>
       <Route path='/' element={<ItemListContainer/>}/>
       <Route path='/detalle/:id' element={<ItemDetailContainer/>}/>
     </Routes>
     </div>
+      </Context>
     </HashRouter>
   );
 }

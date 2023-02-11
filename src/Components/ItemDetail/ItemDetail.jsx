@@ -29,7 +29,7 @@ const ItemDetail = ({ movieDetail }) => {
             </div>
           </div>
           <div >
-              <button className="btn " style={{backgroundColor:'#a2c11c'}}>Watch</button>
+              <button className="btn " style={{backgroundColor:'#005792'}}>Watch</button>
           </div>
         </div>
       </div>
