@@ -14,6 +14,8 @@ const ItemDetailContainer = () => {
   const[loading,setLoading]= useState(true)
   const {id} =useParams()
 
+  const {poster_path,overview,release_date,original_title,original_language} = movieDetail
+
   useEffect(()=>{
     setTimeout(() => {
       
@@ -53,16 +55,41 @@ if(loading){
   </div>
 }
   return (
-   <div className=''  >
-    <div className='main-bg-detail' style={{position:'absolute',height:'100vh',width:'100%', filter:'brightness(30%)',backgroundRepeat:'no-repeat',backgroundSize:'cover',backgroundPosition:'center', backgroundImage:`url(${getImg(movieDetail.backdrop_path)})`}}>
-    </div>
-    <div className='container' style={{display:'flex',flexDirection:'column',justifyContent:'center',position:'relative'}}>
-    <ItemDetail movieDetail={movieDetail} ></ItemDetail>
-    </div>
     <div>
-          <Footer/>
+        <div className='detail-container' style={{ backgroundImage:`url(${getImg(poster_path)})`}}>
+
+       </div>
+  <div className='container' style={{position:'relative'}}>
+         <div className='row'>
+            <div className="col"style={{display:'flex',justifyContent:'center'}}>
+              <div style={{marginTop:'20px'}}>
+            <img src={getImg(poster_path)} style={{width:'250px',borderRadius:'20px'}} alt="" />
+              </div>
+            </div>
+            
+            <div className="col" style={{display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column'}}>
+           
+              <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
+                <h2 className='text-center' style={{color:'white'}}>{original_title}</h2>
+                 <p style={{color:'white'}}>{release_date}</p>
+               </div>
+              <div>
+                    <p style={{color:'white'}}>{overview}</p>
+              </div>
+              <div style={{display:'flex',alignItems:'center',}}>
+                <div style={{marginRight:'100px'}}>
+                  <span style={{color:'white',borderLeft:'solid 3px #005792',padding:'10px'}}>Lenguaje : {original_language}</span></div>
+                <div>
+                  <button className='btn' style={{backgroundColor:'#005792',color:'white'}}> Watch </button>
+                </div>
+              </div>
+            </div>
+         </div>
+     </div>
     </div>
-   </div>
+
+
+
   )
 }
 

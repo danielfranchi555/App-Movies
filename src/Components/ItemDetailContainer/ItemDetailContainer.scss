@@ -1,5 +1,18 @@
-@media screen  and (max-width: 800px)  {
-    .main-bg-detail{
-       min-height: 130vh;
-    }
+
+.detail-container{
+    position: absolute;
+    filter: brightness(20%);
+    background-position: center;
+    background-size: cover;
+    height: 88vh;
+    width: 100%;
+    border: solid 2px white;
 }
+
+@media screen and (max-width: 480px) {
+      .detail-container{
+            height: 118vh;
+           
+      }
+}
+
