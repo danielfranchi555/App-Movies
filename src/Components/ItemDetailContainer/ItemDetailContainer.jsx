@@ -89,7 +89,7 @@ console.log(trailer)
                {playing?
                <>
                 <Modal
-        size="lg"
+        size="xl"
         show={lgShow}
         onHide={() => setLgShow(false)}
         aria-labelledby="example-modal-sizes-title-lg"
@@ -106,7 +106,7 @@ console.log(trailer)
                containerClassName={"youtube-container amru"}
                opts={{
                  width: "100%",
-                 height: "200px",
+                 height: "400px",
                  playerVars: {
                    autoplay: 1,
                    controls: 0,
@@ -121,7 +121,7 @@ console.log(trailer)
              />
              <div className="text-center">
                 <button className="btn btn-dark" onClick={()=>setPlaying(false)}>
-                Stop watching
+                  Stop Watching
             </button>
              </div>
              
@@ -131,7 +131,7 @@ console.log(trailer)
                </>
         
             :
-            null
+            <h1>no</h1>
             }
             <div style={{ marginTop: "20px" }}>
               <img

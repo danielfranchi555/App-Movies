@@ -28,11 +28,15 @@ const NavBar = () => {
   const { isAuthenticated, user } = useAuth0();
 
 
-
+  
+     
+    
   const newArray = data.concat(dataRated, dataTop);
   const filterMovies = newArray.filter((movie) =>
-    movie.original_title.toLowerCase().includes(input.toLocaleLowerCase())
+    movie.title.toLowerCase().includes(input.toLocaleLowerCase())
   );
+
+ 
 
   useEffect(() => {
     setTimeout(() => {
@@ -51,9 +55,6 @@ const NavBar = () => {
 
   const handleSumbit = (e) => {
     e.preventDefault();
-    if(input === undefined){
-     alert('pelicula no encontrada')
-    }
   };
   const handleChange = (e) => {
     setInput(e.target.value);
@@ -97,12 +98,12 @@ const NavBar = () => {
                   </form>
                 </div>
                 <Modal.Body>
-                  {input === "" 
-                    ? null
-                    : filterMovies.map((item) => (
+                  {input.length === 0  ?
+                      <span>no hay peliculas</span>  :
+                     filterMovies.map((item) => (
                         <Link to={`/detalle/${item.id}`}>
                           <img
-                            style={{ width: "100px" }}
+                            style={{ width: "100px",margin:'10px' }}
                             src={imgMovie(item.poster_path)}
                           ></img>
                         </Link>
