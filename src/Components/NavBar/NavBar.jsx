@@ -51,6 +51,9 @@ const NavBar = () => {
 
   const handleSumbit = (e) => {
     e.preventDefault();
+    if(input === undefined){
+     alert('pelicula no encontrada')
+    }
   };
   const handleChange = (e) => {
     setInput(e.target.value);
@@ -81,12 +84,20 @@ const NavBar = () => {
                 <Modal.Header closeButton></Modal.Header>
                 <div>
                   <form onSubmit={handleSumbit}>
-                    <input type="text" onChange={handleChange} value={input} />
-                    <input type="submit" />
+                    <div  style={{display:'flex',justifyContent:'center',flexDirection:'column',alignItems:'center'}}>
+                      <div>
+                                        <input type="text" placeholder="add movie" className=" text-center" onChange={handleChange} value={input} />
+                      </div>
+                      <div style={{margin:'10px'}} >
+                                          <input className="btn btn-dark" type="submit" />
+
+                    </div>
+                    </div>
+                   
                   </form>
                 </div>
                 <Modal.Body>
-                  {input === ""
+                  {input === "" 
                     ? null
                     : filterMovies.map((item) => (
                         <Link to={`/detalle/${item.id}`}>
