@@ -7,6 +7,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
+import swal from 'sweetalert';
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { getApiUpcomming } from "../../data";
@@ -32,9 +33,16 @@ const NavBar = () => {
      
     
   const newArray = data.concat(dataRated, dataTop);
-  const filterMovies = newArray.filter((movie) =>
+   const filterMovies = newArray.filter((movie) =>
     movie.title.toLowerCase().includes(input.toLocaleLowerCase())
-  );
+  ); 
+
+
+  const alert = ()=>{
+    swal({
+      title: `Bienvenido ${user.name} `,
+    });
+  }
 
  
 
@@ -50,27 +58,39 @@ const NavBar = () => {
 
   const imgMovie = (url) => {
     let img;
-    return (img = `https://image.tmdb.org/t/p/original${url}`);
+    return ( img = `https://image.tmdb.org/t/p/original${url}`);
   };
 
   const handleSumbit = (e) => {
     e.preventDefault();
   };
+
+   
+  const titleMovies = filterMovies.map((title)=> title.title)
+
+   const idTitle = (title)=>{
+
+       if(input != title){
+         alert('no se encuentra ese titulo')
+       }
+   }
+ console.log(titleMovies)
+
   const handleChange = (e) => {
     setInput(e.target.value);
   };
 
   return (
-    <Navbar collapseOnSelect expand="lg"    >
+    <Navbar collapseOnSelect expand="lg">
       <Container>
         <Navbar.Brand href="/"> <img src={logo} style={{width:'50px'}} alt="" /> </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" style={{backgroundColor:'#ececec'}} />
+        <Navbar.Collapse id="responsive-navbar-nav" >
           <Nav className="ms-auto d-flex" style={{justifyContent:'center',alignItems:'center'}}>
           <div>
                     <Nav.Link >
               <Button
-                style={{ backgroundColor: "#005792", height: "35px" }}
+                style={{ backgroundColor: "#9fd3c7", height: "35px",color:'black'}}
                 onClick={() => setLgShow(true)}
               >
                 Search Movie <img src={lupa} alt="" style={{ width: "20px" }} />
@@ -90,7 +110,7 @@ const NavBar = () => {
                                         <input type="text" placeholder="add movie" className=" text-center" onChange={handleChange} value={input} />
                       </div>
                       <div style={{margin:'10px'}} >
-                                          <input className="btn btn-dark" type="submit" />
+                                          <input className="btn btn-dark" type="submit" onClick={()=>idTitle(titleMovies)} />
 
                     </div>
                     </div>
@@ -99,7 +119,7 @@ const NavBar = () => {
                 </div>
                 <Modal.Body>
                   {input.length === 0  ?
-                      <span>no hay peliculas</span>  :
+                      <span style={{fontWeight:'700',color:'red'}}>No ingresaste ninguna pelicula</span>  :
                      filterMovies.map((item) => (
                         <Link to={`/detalle/${item.id}`}>
                           <img
@@ -115,7 +135,7 @@ const NavBar = () => {
         
             <div>
               <Nav.Link>
-                {isAuthenticated? <LogoutButton/>:
+                {isAuthenticated?  <LogoutButton/>:
                 
                 <LoginButton/>
                 }

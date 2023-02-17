@@ -4,7 +4,6 @@ import Carrousel from "../Carrousel/Carrousel";
 import ItemList from "../ItemList/ItemList";
 import ItemListUpcomming from "../ItemListUpcomming/ItemListUpcomming";
 import Spinner from 'react-bootstrap/Spinner';
-import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { useAuth0 } from '@auth0/auth0-react';
 import {getApiUpcomming} from '../../data'
@@ -13,7 +12,6 @@ import {getMovieDetailTop} from '../../data'
 import "./ItemListContainer.scss";
 import ItemListTop from "../ItemListTop/ItemListTop";
 import Footer from "../Footer/Footer";
-import { Link } from "react-router-dom";
 
 const ItemListContainer = () => {
   
@@ -33,7 +31,6 @@ const ItemListContainer = () => {
       setLoading(false);
     }, 3000);
   }, []);
-
 
 
 
@@ -61,7 +58,7 @@ const ItemListContainer = () => {
 
  
  
-  {isAuthenticated && <h2 style={{color:'white',textAlign:'center',marginTop:'20px'}}> Peliculas para <span style={{color:'#005792'}}>{user.name}</span> </h2>}
+ 
  <ItemList data={data} />
   <ItemListUpcomming />
   <ItemListTop className='py-5'/>

@@ -1,11 +1,29 @@
 .img-carrousel{
     width: 100%;
-    height: auto;
-    filter: brightness(30%); 
+    height: 800px;
+    position: center;
+    filter: brightness(50%); 
 }
 @media screen and (max-width:800px) {
-    .title-Carrousel{
+    .img-carrousel{
         top: 300px;
-        font-size: 500px;
+    } 
+}
+
+.carousel-item{
+    height:600px;
+    width: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-position-y: -500px;
+    background-repeat: no-repeat;
+}
+
+@media screen and (max-width:500px) {
+    .carousel-item{
+        height: 300px;
+    }
+    .img-carrousel{
+        height:400px;
     } 
 }

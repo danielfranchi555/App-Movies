@@ -129,9 +129,9 @@ console.log(trailer)
       </Modal>
           
                </>
-        
+       
             :
-            <h1>no</h1>
+             null
             }
             <div style={{ marginTop: "20px" }}>
               <img
@@ -172,7 +172,7 @@ console.log(trailer)
                 <span
                   style={{
                     color: "white",
-                    borderLeft: "solid 3px #005792",
+                    borderLeft: "solid 3px #9fd3c7",
                     padding: "10px",
                   }}
                 >
@@ -182,7 +182,7 @@ console.log(trailer)
               <div>
                 <button
                   className="btn"
-                  style={{ backgroundColor: "#005792", color: "white" }}
+                  style={{ backgroundColor: "#9fd3c7", color: "black" }}
                   onClick={()=>buttonFunction()}
                 >
                   {" "}

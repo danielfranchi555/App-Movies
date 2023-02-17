@@ -6,7 +6,7 @@ import logoig from '../../img/ig.png'
 
 const Footer = () => {
   return (
-    <div  style={{backgroundColor:' #00204a',marginTop:'100px'}}>
+    <div  style={{backgroundColor:' #142d4c',marginTop:'100px'}}>
         <footer>
 <div class="footer" >
 <div class="" style={{display:'flex',justifyContent:'center'}}>
