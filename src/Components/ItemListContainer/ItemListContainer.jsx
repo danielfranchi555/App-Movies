@@ -61,7 +61,7 @@ const ItemListContainer = () => {
  
  <ItemList data={data} />
   <ItemListUpcomming />
-  <ItemListTop className='py-5'/>
+  <ItemListTop />
 </div>
   <Footer/>
 </div>

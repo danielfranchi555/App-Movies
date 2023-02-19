@@ -73,7 +73,10 @@ const ItemListUpcomming = () => {
   }
   return (
     <div className="container">
-      <p style={{ color: "white",marginBottom:'10px' }}>movie upcomming</p>
+      <div>
+              <p style={{ color: "white",marginBottom:'10px',marginTop:'30px',fontSize:'20px',fontWeight:'600' }}>Movie upcomming</p>
+
+      </div>
       <Slider {...settings}>
         {newData.map((item) => (
           <div key={item.id} className="container">
@@ -81,7 +84,7 @@ const ItemListUpcomming = () => {
                <Link to={`/detalle/${item.id}`}>
               <div className="card-item">
                 <img
-                  className="px-2"
+                  className=""
                   src={imgMovie(item.poster_path)}
                   style={{ height: "200px", width: "150px", margin: "" }}
                 />

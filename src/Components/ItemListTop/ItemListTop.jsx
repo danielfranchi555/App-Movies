@@ -65,8 +65,10 @@ const ItemListTop = () => {
       };
   return (
     <div className='py-3 container'>
-        <p style={{color:'white',marginBottom:'10px'}}> top rated</p>
-          <Slider {...settings}>
+  <div>
+              <p style={{ color: "white",marginBottom:'10px',marginTop:'30px',fontSize:'20px',fontWeight:'600' }}>Top rated</p>
+
+      </div>          <Slider {...settings}>
         {data.map((item) => (
           <div key={item.id} className="container">
             {isAuthenticated?

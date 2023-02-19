@@ -31,7 +31,7 @@ const Carrousel = () => {
               src={addImg(item.poster_path)}
               alt="First slide"
             />
-            <Carousel.Caption>
+            <Carousel.Caption style={{marginBottom:'100px'}}>
               <h1>{item.title}</h1>
             </Carousel.Caption>
           </Carousel.Item>
