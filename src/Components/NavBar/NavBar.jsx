@@ -81,7 +81,7 @@ const NavBar = () => {
   };
 
   return (
-    <Navbar collapseOnSelect expand="lg">
+    <Navbar collapseOnSelect expand="lg" style={{backgroundColor:'#142d4c'}}>
       <Container>
         <Navbar.Brand href="/"> <img src={logo} style={{width:'50px'}} alt="" /> </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" style={{backgroundColor:'#ececec'}} />
@@ -102,30 +102,30 @@ const NavBar = () => {
                 aria-labelledby="example-modal-sizes-title-lg"
                 className="text-center"
               >
-                <Modal.Header closeButton></Modal.Header>
-                <div>
+                <Modal.Header closeButton style={{backgroundColor:'#142d4c'}}>
+
+                </Modal.Header>
+                <div style={{backgroundColor:'black'}}>
                   <form onSubmit={handleSumbit}>
                     <div  style={{display:'flex',justifyContent:'center',flexDirection:'column',alignItems:'center'}}>
-                      <div>
+                      <div style={{margin:'10px'}}>
                                         <input type="text" placeholder="add movie" className=" text-center" onChange={handleChange} value={input} />
                       </div>
-                      <div style={{margin:'10px'}} >
-                                          <input className="btn btn-dark" type="submit" onClick={()=>idTitle(titleMovies)} />
-
-                    </div>
+                     
                     </div>
                    
                   </form>
                 </div>
-                <Modal.Body>
+                <Modal.Body style={{backgroundColor:'black'}}>
                   {input.length === 0  ?
-                      <span style={{fontWeight:'700',color:'red'}}>No ingresaste ninguna pelicula</span>  :
+                      <span style={{fontWeight:'700',color:'red',fontSize:'12px'}}>No ingresaste ninguna pelicula</span>  :
                      filterMovies.map((item) => (
                         <Link to={`/detalle/${item.id}`}>
                           <img
-                            style={{ width: "100px",margin:'10px' }}
+                          className="img-modal"
+                            
                             src={imgMovie(item.poster_path)}
-                          ></img>
+                          />
                         </Link>
                       ))}
                 </Modal.Body>

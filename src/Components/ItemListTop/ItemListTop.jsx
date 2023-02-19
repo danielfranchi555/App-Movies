@@ -25,44 +25,44 @@ const ItemListTop = () => {
  const noLink = () => {
     alert('no estas registrado')
   };
-    const settings = {
-        dots: true,
-        infinite: true,
-        arrows: true,
-        speed: 200,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-    
-        responsive: [
-          {
-            breakpoint: 1424,
-            settings: {
-              slidesToShow: 6,
-              slidesToScroll: 3,
-              infinite: true,
-              dots: true,
-            },
-          },
-    
-          {
-            breakpoint: 1124,
-            settings: {
-              slidesToShow: 4,
-              slidesToScroll: 3,
-              infinite: true,
-              dots: true,
-            },
-          },
-          {
-            breakpoint: 800,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 3,
-              initialSlide: 1,
-            },
-          },
-        ],
-      };
+  const settings = {
+    dots: true,
+    infinite: true,
+    arrows: true,
+    speed: 200,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+
+    responsive: [
+      {
+        breakpoint: 1424,
+        settings: {
+          slidesToShow: 6,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+
+      {
+        breakpoint: 1124,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 3,
+          initialSlide: 1,
+        },
+      },
+    ],
+  };
   return (
     <div className='py-3 container'>
   <div>
@@ -75,7 +75,7 @@ const ItemListTop = () => {
                <Link to={`/detalle/${item.id}`}>
               <div className="card-item">
                 <img
-                  className="px-2"
+                  className=""
                   src={imgMovie(item.poster_path)}
                   style={{ height: "200px", width: "150px", margin: "" }}
                 />
@@ -84,7 +84,7 @@ const ItemListTop = () => {
                 <Link onClick={()=>noLink()}>
                 <div className="card-item">
                   <img
-                    className="px-2"
+                    className=""
                     src={imgMovie(item.poster_path)}
                     style={{ height: "200px", width: "150px", margin: "" }}
                   />

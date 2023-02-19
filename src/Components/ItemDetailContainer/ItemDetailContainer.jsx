@@ -33,6 +33,9 @@ const ItemDetailContainer = () => {
       const trailer = resp.videos.results.find((video) => video.name === 'Official Trailer')
       setTrailer( trailer)
     }
+    if(resp.videos.results === undefined){
+      alert('no se encuentra disponible el trailer en este momento')
+    }
     setMovieDetail(resp)
   };
 

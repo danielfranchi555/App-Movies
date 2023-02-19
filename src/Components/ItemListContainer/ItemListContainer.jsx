@@ -56,9 +56,10 @@ const ItemListContainer = () => {
 </div>
 <div className="container ">
 
- 
- 
- 
+{isAuthenticated && 
+  <h1 style={{fontSize:'25px',textAlign:'center',marginTop:'30px',color:'white'}}>Welcome <span style={{color:'#9fd3c7',fontWeight:'700'}}>{user.name}</span></h1>
+}
+
  <ItemList data={data} />
   <ItemListUpcomming />
   <ItemListTop />

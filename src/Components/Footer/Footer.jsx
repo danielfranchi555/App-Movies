@@ -39,7 +39,7 @@ const Footer = () => {
 
 <div class="footer-bottom" style={{display:'flex',justifyContent:'center'}}>
     <div>
-        INFERNO Copyright © 2021 Inferno - All rights reserved || Designed By: Mahesh 
+        INFERNO Copyright © 2021 Inferno - All rights reserved || Designed By: Daniel Franchi
 
     </div>
 </div>

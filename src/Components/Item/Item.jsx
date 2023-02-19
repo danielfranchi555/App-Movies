@@ -22,7 +22,7 @@ const Item = ({item}) => {
         <img className=' img-list ' src={imgMovie(item.poster_path)} />      
       </Link>:
         <Link onClick={()=>noLink()}>
-        <img className='px-2 img-list ' src={imgMovie(item.poster_path)} />      
+        <img className=' img-list ' src={imgMovie(item.poster_path)} />      
       </Link>
         
     }

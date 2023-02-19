@@ -7,14 +7,12 @@ import "slick-carousel/slick/slick-theme.css";
 
 const ItemList = ({data}) => {
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     arrows: true,
-    speed: 400,
-    slidesToShow: 4,
+    speed: 200,
+    slidesToShow: 3,
     slidesToScroll: 1,
-
-   
 
     responsive: [
       {
@@ -23,17 +21,17 @@ const ItemList = ({data}) => {
           slidesToShow: 6,
           slidesToScroll: 3,
           infinite: true,
-          dots: false,
+          dots: true,
         },
       },
 
       {
         breakpoint: 1124,
         settings: {
-          slidesToShow: 5,
-          slidesToScroll: 5,
+          slidesToShow: 4,
+          slidesToScroll: 3,
           infinite: true,
-          dots: false,
+          dots: true,
         },
       },
       {
@@ -41,11 +39,11 @@ const ItemList = ({data}) => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 3,
-          infinite: true,
-          dots: false,
+          initialSlide: 1,
         },
       },
-    ],}
+    ],
+  };
   return (
     <div className=' container' style={{marginTop:'10px'}}>
       <div className=''>

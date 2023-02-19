@@ -93,7 +93,7 @@ const ItemListUpcomming = () => {
                 <Link onClick={()=>noLink()}>
                 <div className="card-item">
                   <img
-                    className="px-2"
+                    className=""
                     src={imgMovie(item.poster_path)}
                     style={{ height: "200px", width: "150px", margin: "" }}
                   />

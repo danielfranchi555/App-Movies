@@ -1,4 +1,11 @@
-.navbar{
-    background-color:  #142d4c;
-   
-}
+
+    .img-modal{
+     width: 100px;
+     margin: 10px;
+     border-radius: 10px;
+     .img-modal:hover {
+                       transition: 1s;
+               box-shadow: 2px 2px 2px 1px rgba(241, 236, 236, 0.2);
+
+     }
+    }
