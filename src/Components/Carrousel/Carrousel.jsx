@@ -23,8 +23,6 @@ const Carrousel = () => {
       <div  >
         <Carousel>
           {imgCarrousel.map((item) => (
-            
-
             <Carousel.Item key={item.id} className='carousel-item'>
             <img 
               className=" img-carrousel " 

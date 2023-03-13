@@ -38,7 +38,7 @@ const ItemListContainer = () => {
     <div className="">
       {loading?
       <div className="text-center mt-5">
-      <Button variant="primary" disabled>
+      <Button style={{backgroundColor:'#e94822',border:'none'}} disabled>
         <Spinner
           as="span"
           animation="grow"
@@ -57,7 +57,7 @@ const ItemListContainer = () => {
 <div className="container ">
 
 {isAuthenticated && 
-  <h1 style={{fontSize:'25px',textAlign:'center',marginTop:'30px',color:'white'}}>Welcome <span style={{color:'#9fd3c7',fontWeight:'700'}}>{user.name}</span></h1>
+  <h1 style={{fontSize:'25px',textAlign:'center',marginTop:'30px',color:'white'}}>Welcome <span style={{color:'#e94822',fontWeight:'700'}}>{user.name}</span></h1>
 }
 
  <ItemList data={data} />

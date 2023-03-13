@@ -175,7 +175,7 @@ console.log(trailer)
                 <span
                   style={{
                     color: "white",
-                    borderLeft: "solid 3px #9fd3c7",
+                    borderLeft: "solid 3px #e94822",
                     padding: "10px",
                   }}
                 >
@@ -185,7 +185,7 @@ console.log(trailer)
               <div>
                 <button
                   className="btn"
-                  style={{ backgroundColor: "#9fd3c7", color: "black" }}
+                  style={{ backgroundColor: "#e94822", color: "white" }}
                   onClick={()=>buttonFunction()}
                 >
                   {" "}

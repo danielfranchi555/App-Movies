@@ -81,7 +81,7 @@ const NavBar = () => {
   };
 
   return (
-    <Navbar collapseOnSelect expand="lg" style={{backgroundColor:'#142d4c'}}>
+    <Navbar collapseOnSelect expand="lg" style={{backgroundColor:'#2c2d34'}}>
       <Container>
         <Navbar.Brand href="/"> <img src={logo} style={{width:'50px'}} alt="" /> </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" style={{backgroundColor:'#ececec'}} />
@@ -90,7 +90,7 @@ const NavBar = () => {
           <div>
                     <Nav.Link >
               <Button
-                style={{ backgroundColor: "#9fd3c7", height: "35px",color:'black'}}
+                style={{ backgroundColor: "#e94822", height: "35px",color:'white',border:'none'}}
                 onClick={() => setLgShow(true)}
               >
                 Search Movie <img src={lupa} alt="" style={{ width: "20px" }} />
